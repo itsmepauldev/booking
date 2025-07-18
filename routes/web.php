@@ -17,7 +17,7 @@ Route::get('/', function () {
 // Guest-only routes (registration)
 Route::middleware('guest')->group(function () {
     Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
-    Route::post('/register', [RegisteredUserController::class, 'store'])->name('register.post');
+    Route::post('/register', [RegisteredUserController::class, 'store'])->name('register');
 });
 
 // Public route for viewing a specific booking
@@ -49,4 +49,4 @@ Route::middleware('auth')->group(function () {
 });
 
 // Authentication routes (login, logout, password reset, etc.)
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
